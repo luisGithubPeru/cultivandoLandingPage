@@ -1,30 +1,22 @@
 <template>
   <div class="card">
-    <h3>PALTA HASS</h3>
-    <img src="../assets/img/palta.png" alt="Avatar" />
+    <h3>{{product.name}} ({{product.quantity}} toneladas)</h3>
+    <img :src="product.img" alt="Avatar" />
     <p class="name">
-      <span>Productor :</span>
-      <span>{{name}}</span>
+      <span>Categoría :</span>
+      <span>{{product.category}}</span>
     </p>
     <p class="type">
       <span>Tipo :</span>
-      <span>{{type}}</span>
-    </p>
-    <p class="stage">
-      <span>Etapa de Producción:</span>
-      <span>{{stage}}</span>
+      <span>{{product.type}}</span>
     </p>
     <p class="price">
-      <span>Precio:</span>
-      <span>{{price}}</span>
+      <span>Precio promedio:</span>
+      <span>{{product.avg_price}}</span>
     </p>
     <p class="cert">
-      <span>Certificados:</span>
-      <span>{{cert}}</span>
-    </p>
-    <p class="location">
-      <span>Ubicación:</span>
-      <span>{{location}}</span>
+      <span>Certificados frecuentes:</span>
+      <span>{{product.cert}}</span>
     </p>
   </div>
 </template>
@@ -47,13 +39,6 @@
 </style>
 <script>
 export default {
-  props: {
-    name: { type: String, default: "Roberto Perez" },
-    type: { type: String, default: "Organico" },
-    stage: { type: String, default: "En Siembra" },
-    price: { type: String, default: "S/ 5.00" },
-    cert: { type: String, default: "Global GAP" },
-    location: { type: String, default: "Cañete" }
-  }
+  props: ["product"]
 };
 </script>

@@ -1,11 +1,11 @@
 <template>
-  <div class="container">
-    <LandingProduct />
-    <LandingProduct />
-    <LandingProduct />
-    <!-- <LandingProduct />
-    <LandingProduct />
-    <LandingProduct />-->
+  <div>
+    <h1>Productos más vendidos (por toneladas)</h1>
+    <div class="container">
+      <LandingProduct v-bind:product="products[0]" />
+      <LandingProduct v-bind:product="products[1]" />
+      <LandingProduct v-bind:product="products[2]" />
+    </div>
   </div>
 </template>
 <script>
@@ -13,7 +13,8 @@ import LandingProduct from "./LandingProduct.vue";
 export default {
   components: {
     LandingProduct
-  }
+  },
+  props:["products"]
 };
 </script>
 <style lang="scss" scoped>
